@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>你是帅比吗? - 可能吧</title>
+    <style>
+        html,body {
+                height:100%;
+                margin: 0;
+                padding: 0;
+            }
+        a {
+                display: block;
+                text-decoration: none;
+                padding: 5px 0px;
+                color: #364149;
+        }
+        .left {
+                position: fixed;
+                top: 8%;
+                width: 18%;
+                height: 100%;
+                border-right: 1px solid #dddddd;
+                overflow-y: auto;
+
+        }
+        #menu {
+                width: 15%;
+                height: 5%;
+                position: fixed;
+                top: 2%;
+                margin-bottom: 1%;
+        }
+        #menu label {
+                color: #364149;
+                display: block;
+                text-align: center;
+                cursor: pointer;
+        }
+        .left ol {
+                margin: 10px 0px;
+                padding-left: 10%;
+        }
+        .left ul {
+                padding-left: 0px;
+        }
+        .left ol li {
+                color: #364149;
+                padding: 0px 0px;
+                cursor: pointer;
+        }
+        .left ul li {
+                color: #364149;
+                list-style: none;
+                padding: 0px 0px;
+                cursor: pointer;
+        }
+
+        .right {
+                width: 60%;
+                margin: 0 auto;
+                padding-bottom: 10%;
+                border-bottom:1px solid #dddddd;
+
+
+        }
+        .small-title {
+                display: none;
+        }
+        #first-page {
+                    width: 100%;
+                    margin: 0 auto;
+                    text-align: center;
+        }
+        .first-page h1{
+                color: #333;
+                display: block;
+                font-size: 50px;
+                
+        }
+        h1,h2,h4,#footer.lable{
+                color: #364149;
+        }
+        footer {
+                margin-top: 10%;
+                margin-bottom: 2%;
+                text-align: center;
+
+        }
+        #top {
+                position: fixed;
+                bottom: 30%;
+                right: 5%;
+                font-size: 33px;
+
+        }
+        pre {
+                font-family: Consolas,"Liberation Mono",Menlo,Courier,monospace;
+                background: #f7f7f7;
+                white-space: pre-line;
+                word-wrap: break-word;
+                padding: 15px;
+        }
+        span {
+                color: #8e908c;
+        }
+
+        .content {display: none;}
+
+        .displ {display: inline;}
+
+    </style>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+                        var wh = window.innerHeight
+                        $('#first-page').css({'height':wh+'px','lineHeight':wh/3 +'px'})
+                        $('.big-title').click(function (){
+                                var sTitleIndex = $('.big-title').index(this)
+                                $('.content').eq(sTitleIndex).toggleClass('displ')
+                                $('.small-title').eq(sTitleIndex).toggleClass('displ')
+                                for (var i = 0;i < $('.big-title').length;i++){
+                                    if ($('.small-title').eq(i).css('display') != 'none'){
+                                            $('.first-page').css({'display':'none'})
+                                            break
+                                    }
+                                    if (i==$('.big-title').length-1){
+                                        $('.first-page').css({'display':''})
+                                        scrollTo(0,0)
+                                }
+                                } 
+                        })
+
+                        $('#menu').click(function () {
+                                $('#left').toggleClass('content')
+                        })
+
+
+                        $('#top').click(function(){
+                                var oTop = document.body.scrollTop || document.documentElement.scrollTop;
+                                var oTimer = setInterval(func,15)
+                                function func(){ 
+                                    if(oTop > 0){
+                                                oTop -= 50
+                                                scrollTo(0,oTop);
+                                    }
+                                    else{
+                                            setTimeout(oTimer)
+                                        } 
+                                }
+                        })
+        })
+
+//  醉玉颓山 昂藏七尺 颜如冠玉 目如朗星 剑眉星目 温文尔雅 丰采高雅 神明爽俊 逸群之才 淑人君子 清新俊逸 
+    </script>
+</head>
+<body>
+
+    <!-- menu -->
+    <div id="menu">
+        <label>帅比十八式</label>
+    </div>
+    <div class="left" id="left">
+        <ol>
+            <a href="#content01"><li class="big-title" id="point01">隐藏在基础里的奇淫巧技</li></a>
+                <div class="small-title" id="point01-title"> 
+                    <ul>
+                    <a href="#content01"><li>1.1 repr</li></a>
+                    <a href="#content01-title02"><li>1.2 eval</li></a>
+                    <a href="#content01-title03"><li>1.3 max,min,sum</li></a>
+                    <a href="#content01-title04"><li>1.4 帅比之争</li></a>
+                    </ul>
+                </div>
+            <a href="#content02"><li class="big-title" id="point02">长身玉立, 坐上琴心</li></a>
+                <div class="small-title" id="point02-title"> 
+                    <ul>
+                    <a href="#content02-title03"><li>2.3 pip</li></a>
+                    </ul>
+                </div>
+        </ol>
+    </div>
+    
+    <!-- content -->
+    <div class="right" id="content">
+
+        <div class="first-page" id="first-page">
+            <h1 id="order01">如练此功</h1>
+            <h1 id="order02">必成帅比</h1>
+        </div>
+
+        <div class="content" id="content01">
+            <h1>隐藏在基础里的奇淫巧技</h1>
+            <div id="content01-title01">
+                <h2>&lt;1&gt;repr</h2>
+                <pre> <span>
+                            'repr'在Python中的官方文档中被这样解释:"repr() 函数将对象转化为供解释器读取的形式。"
+                            你可以理解为:将任何一个数据类型(如:列表,元组等等)外再加上一个引号.
+                            加上引号意味着它的数据类型转换为字符串,但不仅仅如此,repr还会在转换为字符串后保留原有的类型特征,
+                            如:
+                            repr([1,2,3]) = "[1,2,3]"
+                            repr((1,2,3)) = "(1,2,3)"
+                            repr('123') = "'123'"
+                            如此,请将Python所有数据类型一一举例,使用repr()函数观察其变化,并思考它的作用(使用场景).
+
+                </span></pre>
+            </div>
+            <div id="content01-title02">
+                <h2>&lt;2&gt;eval</h2>
+                <pre> <span>
+                            说出来你可能不信,eval一般情况下都会和repr一起使用,那么eval的作用是什么?
+                            eval的官方解释为:"将字符串str当成有效的表达式来求值并返回计算结果。"
+                            你可以理解为:将任何一个字符串外的引号去掉.
+                            去掉字符串外的引号会产生什么样的结果?可以看一看下面的例子:
+                            eval("[1,2,3]") = [1,2,3]
+                            eval("(1,2,3)") = (1,2,3)
+                            eval("123") = 123
+                            那么,使用eval转换出来的结果的数据类型究竟是什么?
+                            请将Python所有的数据类型一一举例,用引号将其包裹,然后使用eval转换去掉引号,并思考它的作用(使用场景).
+                </span></pre>
+            </div>
+            <div id="content01-title03">
+                <h2>&lt;3&gt;max,min,sum</h2>
+                <pre> <span>
+                            max,min与sum是数字运算中经常用到的基本函数.
+                            使用词典可以查出max意思为"最大值",min意思为"最小值",sum意思为"总数".
+                            因此我们能够使用这两个Python自带的函数,快速的得到想要的最大值或最小值.它的使用方式如下:
+                            max(1,22,333) = 333
+                            min(1,22,333) = 1
+                            sum(1,22,333) = 356
+                            那么请思考,如果在max,min或sum中放入一个数字组成的列表,还能够得到正确结果吗?放入元组或者
+                            字典又会得到什么结果?
+                </span></pre>
+
+            </div>
+            <div id="content01-title04">
+                <h2>&lt;4&gt;帅比之争</h2>
+                <pre> <span>
+                            是不是帅比就看这道题了,请听题!
+                            有如下两个字符串:
+                            A = '[1,3,5,7,9]'
+                            B = '[2,4,6,8,10]'
+                            请算出A中所有数字的和,B中所有数字的和.然后将得出的两个数以字符串形式拼接.
+                            请注意,最终结果应为:'2530'.
+                            帅比之争,着实不易,行动吧少年!
+                </span></pre>
+            </div>
+        </div>
+
+        <div class="content" id="content02">
+            <h1>长身玉立, 坐上琴心</h1>
+
+            使用两种方法做一道题,声明最好只用一种方法,不然找第二种方法时候出bug思路就断了容易把自己绕进去,公司里能把功能
+            实现出来就已经很难了,难道到时候实现出来以后还要傻傻的去找有没有第二种方法实现?没有必要的事情都是浪费时间,不如
+            在原来的题目上给自己加点难度变成一道新题目再做一做,你哥刷题目也是一样的,第一次刷必定是用最傻的方法做出来,第二次
+            再进行完善更新好的方法,但是刷第二次指的是所有的题目刷一遍后,而不是单指这道题的第二次
+
+
+            <div id="content02-title03">
+                <h2>&lt;3&gt;pip</h2>
+                <pre> <span>
+                            pip3 install 模块名
+                </span></pre>
+            </div>
+        </div>
+    </div>
+    <!-- top -->
+    <div id="top">
+        <label style="color: #364149;font-size:30px;cursor: pointer;">top</label>
+    </div>
+    <!-- footer -->
+    <footer id="footer">
+        <label for="">This website is only for handsome men</label>
+        <h4 style="text-align: center">所有题目绝不超纲,任何一个知识点都能够在Python基础课件中找到!</h4>
+        <h4 style="text-align: center">最终解释权归你哥所有-,-</h4>
+    </footer>
+
+
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>你是帅比吗? - 可能吧</title>
+    <style>
+        html,body {
+                height:100%;
+                margin: 0;
+                padding: 0;
+            }
+        a {
+                display: block;
+                text-decoration: none;
+                padding: 5px 0px;
+        }
+        a,h1,h2,h4,#footer.lable,.left ul li,#menu label{
+                color: #364149;
+        }
+        footer {
+                margin-top: 10%;
+                margin-bottom: 2%;
+                text-align: center;
+
+        }
+        strong  {               
+             white-space: pre-line;
+        }
+        pre {
+                font-family: Consolas,"Liberation Mono",Menlo,Courier,monospace;
+                background: #f7f7f7;
+                white-space: pre-line;
+                word-wrap: break-word;
+                padding: 15px;
+        }
+        span {
+                color: #8e908c;
+        }
+        #menu {
+                width: 18%;                                                     
+                height: 5%;
+                position: fixed;
+                top: 2%;
+                margin-bottom: 1%;
+        }                   
+        #menu label {
+                display: block;
+                text-align: center;
+                cursor: pointer;
+        }
+        .left {
+                position: fixed;
+                top: 5%;
+                width: 18%;
+                height: 100%;
+                border-right: 1px solid #dddddd;
+                overflow-y: auto;
+
+        }
+        .left ol {
+                margin: 10px 0px;
+                padding-left: 10%;
+        }
+        .left ul {
+                padding-left: 0px;
+        }
+
+        .left ul li {
+                list-style: none;
+                padding: 0px 0px;
+                cursor: pointer;
+        }
+
+        .right {
+                width: 60%;
+                margin: 0 auto;
+                padding-bottom: 10%;
+                border-bottom:1px solid #dddddd;
+        }
+        .small-title{
+            display: none;
+        }
+        #first-page {
+                    width: 100%;
+                    margin: 0 auto;
+                    text-align: center;
+        }
+        .first-page h1{
+                color: #333;
+                display: block;
+                font-size: 50px;
+                
+        }
+       
+        #top {
+                position: fixed;
+                bottom: 30%;
+                right: 5%;
+                font-size: 33px;
+
+        }
+        .content {display: none;}
+
+        .displ {display: inline;}
+        .content p {
+            word-wrap: break-word;
+            color: #333;
+            line-height: 1.7;    
+            margin-top: 0;
+            orphans: 3;
+            widows: 3;
+            font-size: inherit;
+            white-space: pre-line;
+            margin-bottom: .85em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;   
+        }
+    </style>
+    <script src="./js/vue.js"></script>
+    <script>
+        window.onload =  function () {
+                var wh = window.innerHeight
+                var vue = new Vue({
+                    el:'.app',
+                    data:{
+                        isMenu:false,
+                        title:0,
+                        firstPage:{
+                            'height':wh + 'px',
+                            'lineHeight':wh/3 +'px'
+                            }
+                    },
+                    methods:{
+                        isfirstPage:function(){
+                            if(this.title==0){
+                                var oTop = document.body.scrollTop || document.documentElement.scrollTop;
+                                var oTimer = setInterval(func,15)
+                                function func(){ 
+                                    if(oTop > 0){
+                                                oTop -= 50
+                                                scrollTo(0,oTop);
+                                    }
+                                    else{
+                                            setTimeout(oTimer)
+                                        } 
+                                }
+                            }
+                        }
+                    }
+                })
+        }
+
+//  醉玉颓山 昂藏七尺 颜如冠玉 目如朗星 剑眉星目 温文尔雅 丰采高雅 神明爽俊 逸群之才 淑人君子 清新俊逸 
+    </script>
+</head>
+<body>
+<div class="app">
+    <!-- menu -->
+    <div class="left" id="left" :style="isMenu ? 'left:0%':'left: -18%'" @mouseenter="isMenu = true"
+    @mouseleave="isMenu = false" >
+        <div id="menu">
+            <label>帅比十八式</label>
+        </div>
+        <ol>
+            <li >
+            <a href="#content01" class="big-title" id="point01" @mousedown="title==1?title=0:title=1" @mouseup="isfirstPage">言念君子,温其如玉</a>
+                <div class="small-title" id="point01-title" :style="title==1?'display:inline':'display:none'"> 
+                    <ul>
+                    <a href="#content01"><li>1.1 repr</li></a>
+                    <a href="#content01-title02"><li>1.2 eval</li></a>
+                    <a href="#content01-title03"><li>1.3 max,min,sum</li></a>
+                    <a href="#content01-title04"><li>1.4 帅比之争</li></a>
+                    </ul>
+                </div>
+            </li>
+            <li >
+                <a href="#content02" class="big-title" id="point02" @mousedown="title==2?title=0:title=2" @mouseup="isfirstPage">长身玉立, 坐上琴心</a>
+                <div class="small-title" id="point02-title" :style="title==2?'display:inline':'display:none'"> 
+                    <ul>
+                    <a href="#content02-title01"><li>2.1 pip</li></a>
+                    <a href="#content02-title02"><li>2.2 enumerate</li></a>
+                    <a href="#content02-title03"><li>2.3 列表推导式</li></a>
+                    <a href="#content02-title04"><li>2.4 帅比之争</li></a>
+                    </ul>
+                </div>
+            </li>
+        </ol>
+    </div>
+    
+    <!-- content -->
+    <div class="right" id="content">
+
+        <div class="first-page" id="first-page" :style="firstPage">
+            <h1 id="order01">如练此功</h1>
+            <h1 id="order02">必成帅比</h1>
+        </div>
+
+        <div class="page-content">
+            <div class="content" id="content01" :style="title==1?'display:inline':'display:none'">
+                <h1>言念君子,温其如玉</h1>
+                <div id="content01-title01">
+                    <h2>&lt;1&gt;repr</h2>
+                    <pre> <span>'repr'在Python中的官方文档中被这样解释:"repr() 函数将对象转化为供解释器读取的形式。"
+                                你可以理解为:将任何一个数据类型(如:列表,元组等等)外再加上一个引号.
+                                加上引号意味着它的数据类型转换为字符串,但不仅仅如此,repr还会在转换为字符串后保留原有的类型特征,
+                                如:
+                                repr([1,2,3]) = "[1,2,3]"
+                                repr((1,2,3)) = "(1,2,3)"
+                                repr('123') = "'123'"
+                                如此,请将Python所有数据类型一一举例,使用repr()函数观察其变化,并思考它的作用(使用场景).
+
+                    </span></pre>
+                </div>
+                <div id="content01-title02">
+                    <h2>&lt;2&gt;eval</h2>
+                    <pre> <span>说出来你可能不信,eval一般情况下都会和repr一起使用,那么eval的作用是什么?
+                                eval的官方解释为:"将字符串str当成有效的表达式来求值并返回计算结果。"
+                                你可以理解为:将任何一个字符串外的引号去掉.
+                                去掉字符串外的引号会产生什么样的结果?可以看一看下面的例子:
+                                eval("[1,2,3]") = [1,2,3]
+                                eval("(1,2,3)") = (1,2,3)
+                                eval("123") = 123
+                                那么,使用eval转换出来的结果的数据类型究竟是什么?
+                                请将Python所有的数据类型一一举例,用引号将其包裹,然后使用eval转换去掉引号,并思考它的作用(使用场景).
+                    </span></pre>
+                </div>
+                <div id="content01-title03">
+                    <h2>&lt;3&gt;max,min,sum</h2>
+                    <pre> <span>max,min与sum是数字运算中经常用到的基本函数.
+                                使用词典可以查出max意思为"最大值",min意思为"最小值",sum意思为"总数".
+                                因此我们能够使用这两个Python自带的函数,快速的得到想要的最大值或最小值.它的使用方式如下:
+                                max(1,22,333) = 333
+                                min(1,22,333) = 1
+                                sum(1,22,333) = 356
+                                那么请思考,如果在max,min或sum中放入一个数字组成的列表,还能够得到正确结果吗?放入元组或者
+                                字典又会得到什么结果?
+                    </span></pre>
+
+                </div>
+                <div id="content01-title04">
+                    <h2>&lt;4&gt;帅比之争</h2>
+                    <pre> <span>是不是帅比就看这道题了,请听题!
+                                有如下两个字符串:
+                                A = '[1,3,5,7,9]'
+                                B = '[2,4,6,8,10]'
+                                请算出A中所有数字的和,B中所有数字的和.然后将得出的两个数以字符串形式拼接.
+                                请注意,最终结果应为:'2530'.
+                                帅比之争,着实不易,行动吧少年!
+                    </span></pre>
+                </div>
+            </div>
+
+            <div class="content" id="content02" :style="title==2?'display:inline':'display:none'">
+                <h1>长身玉立, 坐上琴心</h1>
+                <div id="content02-title01">
+                    <h2>&lt;1&gt;pip</h2>
+                    <pre><span>pip3 install 模块名
+                        
+                                镜像下载
+
+                               pip install -i http://pypi.douban.com/simple 模块名
+                    </span>
+                    </pre>
+                </div>
+                <div id="content02-title02">
+                        <h2>&lt;2&gt;enumerate</h2>
+                        <p>       　　 有很多时候,我们在for循环遍历某个列表时还要用到它的下标,这时我们使用list的index方法确实可以拿到
+                                    当前元素的下标.
+                                    　　但我们也要明白,index方法的内部实现就是用了一个循环去当前列表找当前元素看当前元素是第几个出现的.
+                                    这句话看不明白不要紧,只需要明白index的使用会增加程序运行的时间.
+                                    　 　因此,为了减短程序运行时间,也为了写出更加简洁明了的代码,enumerate函数诞生了.enumerate使人着迷,
+                                    只要你把列表放在enumerate函数中,在遍历出当前元素时会自动生成当前元素的下标.
+                        </p>
+                        <pre> <span>输入:
+                                    ls = [3,33,4,5,66]
+                                    for i in enumerate(ls):
+                                    　　print(i)
+                                    输出: (0, 3) (1, 33) (2, 4) (3, 5) (4, 66)</span>
+                        </pre>
+                        <p>         　　但是事实上,只要我们用到enumerate函数进行for循环遍历,我们通常使用两个临时变量,分别代表当前元素的
+                                    下标和当前元素自身.
+                        </p>
+                        <pre> <span>输入:
+                                    ls = [3,33,4,5,66]
+                                    for x,y in enumerate(ls):
+                                    　　print(x)
+                                    　　print(y)
+                                    输出: 0 3 1 33 2 4 3 5 4 66</span>
+                        </pre>
+                        <strong>    　　试一试:输入list=[[3,3],33,44,(4,5),66,],输出值与对应下标.
+                        </strong>
+                </div>
+                <div id="content02-title03">
+                        <h2>&lt;3&gt;列表推导式</h2>
+                        <p>         　 　通常地,我们想要对列表中每个元素进行相同的操作,比如将ls中所有的元素+1,我们可以进行如下操作.
+                        </p>
+                        <pre> <span>输入:
+                                    ls = [3,33,4,5,66]
+                                    ls_2 = [x+1 for x in ls]
+                                    print(ls_2)
+                                    输出: [4,34,5,6,67]</span>
+                        </pre>
+                        <p>         　　以上输入的列表推导式可以这么解读:循环遍历ls列表,将拿到的当前元素进行+1操作,然后把结果放到ls_2
+                                    这个新列表中.
+                                    　　同样地,假设已知列表中的每个元素中内嵌有两个数值,如ls=[[1,2],[3,4],[5,6]].我们把每个元素中的两
+                                    个数值进行相加,可以进行如下操作:
+                        </p>
+                        <pre> <span>输入:
+                                    ls = [[1,2],[3,4],[5,6]]
+                                    ls_2 = [x+y for x,y in ls]
+                                    print(ls_2)
+                                    输出:[3, 7, 11]</span>
+                        </pre>
+                        <strong>    　　试一试:输入list=[[3,3],[33,44],(4,5),(66,77)],输出每个元素中最大的那个数.
+                        </strong>
+                </div>
+                <div id="content02-title04">
+                        <h2>&lt;4&gt;帅比之争</h2>
+                        <p>         　　没错,又到了激动人心的帅比之争,不知道前面的知识点你是不是已经熟稔于心了呢~
+                                    　　没有的话那可完犊子了!请听题!
+                                </p>
+                        <strong>
+                                    　　请将给定的列表中每个元素与自身下标相加,相加得出的数值放入新的列表中,最后请算出新列表中
+                                    所有的元素总和.
+                        </strong>
+                        <pre> <span>输入:ls = [0,1,2,3,4,5,6,7,8,9,10]</span></pre>
+                        <pre> <span>输出: 110</span></pre>
+                        <pre> <span>当题目做出来时,再把敲出的答案捋一遍,不要找第二种方法去解题.
+                                    在公司里能把功能实现出来就已经很难了,如果实现出来后还去找第二种方法实现,首先你的第一种方法很可能
+                                    有bug你需要把刚刚实现的代码功能完善加强,其次你很有可能出bug容易把自己绕进去,没必要把时间浪费在别
+                                    的事情上,如果闲的蛋疼,找新题目或者新功能去实现.如果实在想知道最优解,网上查或者问你哥,不要自己想,
+                                    时间就是金钱.</span></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- top -->
+    <div id="top">
+        <label style="color: #364149;font-size:30px;cursor: pointer;">top</label>
+    </div>
+    <!-- footer -->
+    <footer id="footer">
+        <label for="">This website is only for handsome men</label>
+        <h4 style="text-align: center">所有题目绝不超纲,任何一个知识点都能够在Python基础课件中找到!</h4>
+        <h4 style="text-align: center">最终解释权归你哥所有-,-</h4>
+    </footer>
+
+</div>
+</body>
+</html>

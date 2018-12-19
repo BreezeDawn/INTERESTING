@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,body {
+            font-family: "Microsoft YaHei", SimSun, sans-serif;
+            margin: 0px;
+            padding: 0px;
+        }
+        .page-content {
+            background:url(images/outfit.jpg) top no-repeat;
+            margin-top:0px;
+            left:0;
+            right:0;
+            height:6342px;
+        }
+        .page-header-box{
+            position: relative;
+            margin: 0 auto;
+            z-index: 10;
+            background: url('images/header-bg.jpg') 50% no-repeat;
+        }
+        .page-header {
+            width: 100%;
+            height: 50px;
+            background: #FBFBFA;
+        }
+        .page-header-inner {
+            width: 89%;
+            height: 50px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .inner-logo {
+            float: left;
+            padding-top: 4px;
+            width: 70px;
+            height: 38px;
+            vertical-align: top;
+            border: none;
+        }
+        .page-header-link {
+            float: right;
+        }            
+        .page-header-link a{
+            margin: 0;
+            padding: 0 12px;
+            height: 48px;
+            color:#e94a37;
+            font-size: 13px;
+            text-decoration: none;
+            display: inline-block;
+            line-height: 50px;
+            text-align: center;
+            
+        }
+        .page-header-link .link-555 {
+            color: #555;
+        }
+        a {
+            text-decoration: none;
+        }
+        .main {
+           position: relative;
+        }
+        .index-logo {
+            position: absolute;
+            left: 0px;
+            top: 94px;
+            z-index: 2;
+        }
+        .index-01 {
+            width: 100%;
+            height: 1130px;
+
+            position: relative;
+            z-index: 1;
+
+        }
+        .menu {
+            position: absolute;
+            right: 0;
+            top: 82px;
+            border: 1px solid #869ea7;
+            border-radius: 16px;
+            background-color: #95a7b2;
+            background-color: rgba(14,24,54,0.3);
+            z-index: 2;
+        }
+        .links {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .links .menu-link:hover{
+            text-decoration: underline;
+
+        }
+        .menu-link {
+            padding-left: 5px;
+            padding-right: 5px;
+            display: inline-block;
+            height: 32px;
+            font-size: 14px;
+            line-height: 32px;
+            cursor: pointer;
+            color: #fff;
+        }
+        .menu span {
+            display: inline-block;
+            height: 32px;
+            font-size: 14px;
+            line-height: 32px;
+            color: #fff;
+        }
+        .index-gif {
+            left: 263px;
+            top: 854px;
+            position: absolute;
+            z-index: 2;
+        }
+        .gif-btn {
+            position: absolute;
+            left: 0;
+            top: 20px;
+        }
+
+        .index-box {
+            width: 1920px;
+            left: 50%;
+            position: absolute;
+            margin: 0 auto;
+            height: 100%;
+            margin-left: -960px;
+            transform: translate3d(0px, 0px, 0px);
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+        }
+        .bamboo {
+            width: 100%;
+            height: 667px;
+            position: absolute;
+            background: url('images/bamboo.png') 50% no-repeat;
+            z-index: 2;
+        }
+        .slogan {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            left: 240px;
+            top: 0;
+            width: 785px;
+            height: 1131px;
+            background: url('images/slogan.png')  no-repeat;
+            z-index: 1;
+        }
+        .role {
+            position: absolute;
+            right: 260px;
+            top: 84px;
+            width: 1008px;
+            height: 1047px;
+            z-index: 4;
+            background: url('images/role.png')  no-repeat;
+        }
+        .flower {
+            position: absolute;
+            right: 0;
+            bottom: 0px;
+            width: 729px;
+            height: 229px;
+            z-index: 3;
+            background: url('images/flower.png')  no-repeat;
+        }
+        .cloud {
+            position: absolute;
+            left: 0;
+            bottom: -54px;
+            width: 1920px;
+            height: 353px;
+            z-index: 5;
+            background: url('images/cloud.png')  no-repeat;
+        }
+        .index-content {
+
+        }
+
+
+    </style>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            $('.page-header-link a').mouseenter(function(){
+                        if (this.innerHTML=='客服'||this.innerHTML=='增值服务'){
+                            $(this).toggleClass('link-555')
+                        }
+                        $(this).css({'background':'#f2f2f2','border-bottom': '1.5px solid #e86656'})
+            }).mouseleave(function(){
+                        if (this.innerHTML=='客服'||this.innerHTML=='增值服务'){
+                            $(this).toggleClass('link-555')
+                        }
+                    $(this).css({'background':'','border-bottom': ''})
+            })
+            var wh = window.innerWidth/2
+            document.onmousemove = function(e){
+                var x = e.pageX;
+                var left = 674.5+(x-wh)/50
+                $('.index-box').css({'left':left + 'px'})
+            }
+
+        })
+    </script>
+</head>
+
+<body>
+    <div class="page-content">
+        <div class="page-header-box">
+        <div class="page-header">
+            <div class="page-header-inner">
+                <a href="#"><img class="inner-logo" src="images/下载.png" ></a>
+                <div class="page-header-link">
+                <a  href="#">登录</a>
+                <a  href="#">注册</a>
+                <a  href="#">充值</a>
+                <a  href="#">老玩家回归指南</a>
+                <a class="link-555"  href="#">客服</a>
+                <a class="link-555"  href="#">增值服务</a>
+                </div>
+
+                <div class="index-logo">
+                        <a href="#">
+                                <img src="images/logo.png" alt="剑网3">
+                        </a>
+                    </div>
+
+                <div class="menu">
+                    <div class="links">
+                        <a class="menu-link" href="#">游戏官网</a>
+                        <span>|</span>
+                        <a class="menu-link" href="#">下载游戏</a>
+                        <a class="menu-link" href="#">游戏论坛</a>
+                    </div>
+                    </div>
+
+                <div class="index-gif">
+                    <a href="#">
+                        <div class="gif-box">
+                            <img src="images/banner-video-callout.gif">
+                            <img class="gif-btn" src="images/video-btn.png" >
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        <div class="index-01">
+            <div class="index-box">
+                <div class="bamboo"></div>
+                <div class="slogan"></div>
+                <div class="role"></div>
+                <div class="flower"></div>
+                <div class="cloud"></div>
+            </div>
+        </div>
+        </div>
+        <div class="index-content">
+
+        </div>
+    
+    </div>
+
+        <!-- <div>
+            <a href="#">游戏官网</a>
+            <i>|</i>
+            <a href="#">下载游戏</a>
+            <a href="#">游戏论坛</a>
+        </div>
+
+
+    <div>
+        <a href="javascript:" data-video-width="856" data-video-height="480" data-video-source-url="//video/JuneClothes0615.mp4">
+            <div>
+                <img src="images/banner-video-callout.gif">
+                <img src="images/video-btn.png">
+            </div>
+        </a>
+    </div>
+
+    <div>
+        <div>
+            <img src="images/slogan.png">
+        </div>
+        <div>
+            <img src="images/flower.png" alt="">
+        </div>
+        <div>
+            <img src="images/bamboo.png" alt="">
+        </div>
+        <div>
+            <img src="images/role.png" alt="">
+        </div>
+        <div>
+            <img src="images/cloud.png" alt="">
+        </div>
+    </div> -->
+
+</body>
+
+</html>

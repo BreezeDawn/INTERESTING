@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>还没有这个页面 - </title>
+
+<style>
+	body {
+		font-family: Seravek, 'Myriad Pro', Myriad, 'Open Sans', 'Helvetica Neue', Helvetica, Arial, 'Arial Black', sans-serif;
+		color: #fff;
+		padding: 0;
+		margin: 0;
+		transition: all 1800ms ease;
+    }
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    a:hover {
+    	border-bottom: 3px solid #fff;
+    }
+    p {
+        font-size: 70px;
+        text-align: center;
+        position: relative;
+        margin: 10% auto;
+    }
+</style>
+</head>
+
+<body style="background-color: #111;">
+    <p id="welcome">
+        <span>买买已经爆炸了！</span>
+        <br>
+	<span>这个页面他还没有做...</span>
+        <br>
+        <a href="/">返回主页</a>!
+    </p>
+
+    <script>
+        var listOfColors = ['#12CD55', '#2089DA', '#DE4D00', '#ffcc00'];
+        var currentColorIndex = 0;
+        var moveToNextColor = function () {
+            if (currentColorIndex == listOfColors.length - 1) {
+                currentColorIndex = 0;
+            } else {
+                currentColorIndex += 1;
+            }
+        };
+        window.setTimeout(function () {
+            document.getElementById('welcome').style.opacity = 1;
+            window.setTimeout(function () {
+                window.setInterval(function () {
+                    document.getElementsByTagName('body')[0].style.backgroundColor = listOfColors[currentColorIndex];
+                    document.getElementsByTagName('a')[0].style.backgroundColor = listOfColors[currentColorIndex];
+                    moveToNextColor();
+                }, 2000);
+            }, 800);
+        }, 200);
+    </script>
+</body>
+</html>
